@@ -1,0 +1,35 @@
+﻿@model Instructors
+
+<h3>@Model.InstructorID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>User ID</th>
+        <th>Instructor Name</th>
+        <th>Instructor ID</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+        <td>@Model.UserID</td>
+        <td>@Model.InstructorName</td>
+        <td>@Model.InstructorID</td>
+        <td>@Model.Email</td>
+        <td>@Model.Contact</td>
+        <td>@Model.Address</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Instructors/UpdateInstructors/@Model.InstructorID">Update this Instructor</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteInstructor", "Instructors", "Post"))
+    {
+        <input type="hidden" asp-for="InstructorID" value="@Model.InstructorID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Instructor" />
+    }
+</div>

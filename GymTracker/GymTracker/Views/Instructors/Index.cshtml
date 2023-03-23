@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Instructors>
+
+<h2>Instructors</h2>
+<div style="display: block">
+    <a href="/Instructors/InsertInstructor/">Create a New Instructor</a>
+</div>
+<table class="table">
+    <tr>
+        <th>User ID</th>
+        <th>Instructor Name</th>
+        <th>Instructor ID</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+    </tr>
+
+    @foreach (var instructors in Model)
+    {
+        <tr>
+            <td>@instructors.UserID</td>
+            <td>@instructors.InstructorName</td>
+            <td><a href=/Instructors/ViewInstructors/@instructors.InstructorID>@instructors.InstructorID</a></td>
+            <td>@instructors.Email</td>
+            <td>@instructors.Contact</td>
+            <td>@instructors.Address</td>
+        </tr>
+    }
+
+</table>
