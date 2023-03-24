@@ -48,7 +48,7 @@ namespace Testing.Controllers
 
         public IActionResult InsertInstructor() 
         { 
-            var inst = repo.GetInstructor(0);
+            var inst = repo.AssignFocus();
             return View(inst);
         }
 

@@ -19,7 +19,7 @@ namespace GymTracker
 
         public Instructors GetInstructor(int id)
         {
-            return _conn.QuerySingle<Instructors>("SELECT * FROM INSTRUCTORS WHERE INSTRUCTORID = @id", new { id = id });
+            return _conn.QuerySingleOrDefault<Instructors>("SELECT * FROM INSTRUCTORS WHERE INSTRUCTORID = @id", new { id = id });
         }
 
         public void UpdateInstructors(Instructors instructors)
